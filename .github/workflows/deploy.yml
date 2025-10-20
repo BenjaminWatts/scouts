@@ -56,7 +56,7 @@ jobs:
 
           # Optional: Use mock data if secrets are not configured
           # Uncomment this line to build with mock data:
-          # USE_MOCK_DATA: true
+          USE_MOCK_DATA: true
         run: npm run build
 
       - name: Upload artifact
