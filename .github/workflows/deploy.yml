@@ -9,9 +9,9 @@ on:
   # Allow manual trigger from Actions tab
   workflow_dispatch:
 
-  # Optional: Trigger on a schedule (e.g., daily to refresh data)
-  # schedule:
-  #   - cron: '0 2 * * *' # Run at 2am UTC daily
+  # Trigger on a schedule twice daily to refresh data from OSM
+  schedule:
+    - cron: '0 2,14 * * *' # Run at 2am and 2pm UTC daily (every 12 hours)
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
