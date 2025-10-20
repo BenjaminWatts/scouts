@@ -231,13 +231,18 @@ export class OSMClient {
    * Get programme overview - all meetings in a term
    */
   async getProgrammeSummary(params: GetProgrammeSummaryParams): Promise<ProgrammeSummaryResponse> {
-    return this.request<ProgrammeSummaryResponse>(
+    const response = await this.request<ProgrammeSummaryResponse>(
       '/ext/programme/?action=getProgrammeSummary',
       {
         sectionid: params.sectionid,
         termid: params.termid,
       }
     );
+
+    // Debug logging to understand the API response structure
+    console.log('OSM API getProgrammeSummary response:', JSON.stringify(response, null, 2));
+
+    return response;
   }
 
   /**

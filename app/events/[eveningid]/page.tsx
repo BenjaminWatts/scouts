@@ -39,6 +39,12 @@ export async function generateStaticParams() {
     termid: process.env.OSM_TERM_ID || '1',
   });
 
+  // Handle case where items might be undefined or not an array
+  if (!programmeSummary?.items || !Array.isArray(programmeSummary.items)) {
+    console.warn('No items found in programme summary, returning empty array');
+    return [];
+  }
+
   return programmeSummary.items.map((event) => ({
     eveningid: event.eveningid,
   }));
