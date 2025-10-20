@@ -45,7 +45,7 @@ jobs:
       - name: Build static site
         env:
           # OSM API credentials from repository secrets
-          OSM_API_ID: ${{ secrets.OSM_API_ID }}
+          OSM_API_ID: ${{ secrets.OSM_API_KEY }}
           OSM_API_TOKEN: ${{ secrets.OSM_API_TOKEN }}
           OSM_SECTION_ID: ${{ secrets.OSM_SECTION_ID || '1' }}
           OSM_TERM_ID: ${{ secrets.OSM_TERM_ID || '1' }}
