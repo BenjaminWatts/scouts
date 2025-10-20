@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Bootscout-inspired custom styles */
+
+@layer base {
+  :root {
+    --scouts-purple: #7413dc;
+    --scouts-navy: #003982;
+    --scouts-teal: #00a794;
+    --scouts-pink: #f394c0;
+    --scouts-red: #e22027;
+    --scouts-green: #23a950;
+    --scouts-yellow: #ffe627;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+    color: var(--scouts-purple);
+  }
+}
+
+@layer components {
+  /* Bootscout-style buttons */
+  .btn-primary {
+    @apply px-6 py-3 bg-scouts-purple text-white rounded-lg font-semibold
+           hover:bg-purple-700 transition-all shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-scouts-teal text-white rounded-lg font-semibold
+           hover:bg-teal-600 transition-all shadow-md hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border-2 border-scouts-purple text-scouts-purple rounded-lg
+           font-semibold hover:bg-scouts-purple hover:text-white transition-all;
+  }
+
+  /* Event cards with Scout branding */
+  .event-card {
+    @apply block p-6 bg-white rounded-lg border-2 border-gray-200
+           hover:border-scouts-purple hover:shadow-xl transition-all;
+  }
+
+  .event-card-special {
+    @apply event-card border-scouts-purple bg-purple-50;
+  }
+
+  /* Badge/tag styling */
+  .badge {
+    @apply inline-block px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-purple {
+    @apply badge bg-purple-100 text-purple-800;
+  }
+
+  .badge-teal {
+    @apply badge bg-teal-100 text-teal-800;
+  }
+
+  .badge-blue {
+    @apply badge bg-blue-100 text-blue-800;
+  }
+
+  .badge-green {
+    @apply badge bg-green-100 text-green-800;
+  }
+
+  .badge-yellow {
+    @apply badge bg-yellow-100 text-yellow-800;
+  }
+
+  .badge-gray {
+    @apply badge bg-gray-100 text-gray-600;
+  }
+
+  /* Scout-themed header */
+  .scout-header {
+    @apply bg-gradient-to-r from-scouts-purple to-purple-600 text-white;
+  }
+
+  /* Navigation links */
+  .nav-link {
+    @apply text-gray-700 hover:text-scouts-purple font-medium transition-colors;
+  }
+
+  /* Content sections */
+  .content-section {
+    @apply bg-white rounded-lg border border-gray-200 p-8 shadow-sm;
+  }
+}
+
+@layer utilities {
+  .text-scouts-purple {
+    color: var(--scouts-purple);
+  }
+
+  .bg-scouts-purple {
+    background-color: var(--scouts-purple);
+  }
+
+  .border-scouts-purple {
+    border-color: var(--scouts-purple);
+  }
+}
